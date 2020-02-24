@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const BASEURL     = 'http://localhost:3000/auth'
+const BASEURL     = 'http://localhost:3001/auth'
 
 const AUTHSERVICE = axios.create({
     BASEURL,
@@ -9,19 +9,18 @@ const AUTHSERVICE = axios.create({
 })
 
 
+export const signup =async  (name,email, password)=>{
 
-export const login = async (userName, password) =>{
-    const { data } = await  AUTHSERVICE.post('/login', {userName, password})
-    console.log(data);
-    
-
-    return data
-
+    return await  AUTHSERVICE.post("/signup",{name,email,password})
 }
 
-export const signup =async  (userName,email, password)=>{
-    const {data} =await  AUTHSERVICE.post('/signup',{userName,email,password})
-    console.log(data);
-    
-return data
-}
+
+
+// export const login = async (userName, password) =>{
+//     const { data } = await  AUTHSERVICE.post('/login', {name, password})
+//     console.log(data);
+
+
+//     return data
+
+// }

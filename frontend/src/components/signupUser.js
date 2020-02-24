@@ -1,11 +1,11 @@
 
 import React, { Component } from 'react'
-import { login } from '../services/auth'
+import { signup } from '../services/auth'
 
  class FormUser extends Component {
      state = {
-          userName:'',
-          mail:'',
+          name:'',
+          email:'',
           password:''
      }
 
@@ -18,13 +18,11 @@ import { login } from '../services/auth'
 
      crearUsuario=async (e)=>{
         e.preventDefault();
-
-         const user =await  login(this.state.userName,this.state.mail,this.state.password)
+            const {name,email,password} =this.state
+         const user =await  signup(name,email,password)
 
          console.log(user);
 
-
-         
      }
 
 
@@ -34,13 +32,13 @@ import { login } from '../services/auth'
         return (
             <div>
                 <form onSubmit={this.crearUsuario}>
-                    <input type='text'     name='userName'     id='userName' onChange={this.cambiosenelInput} placeholder='Name'
-                    value={this.state.userName}/>
-                    <input type='email'    name='mail'         id='mail'     onChange={this.cambiosenelInput} placeholder='Email'
-                    value={this.state.mail}/>
+                    <input type='text'     name='name'     id='name' onChange={this.cambiosenelInput} placeholder='Name'
+                    value={this.state.name}/>
+                    <input type='email'    name='email'         id='email'     onChange={this.cambiosenelInput} placeholder='Email'
+                    value={this.state.email}/>
                     <input type='password' name='password'     id='password' onChange={this.cambiosenelInput} placeholder='Password'
                     value={this.state.password}/>
-                    <input type='submit' value='Login'/>
+                    <input type='submit' value='signup'/>
                 </form>
             </div>
         )

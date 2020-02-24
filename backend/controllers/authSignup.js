@@ -1,18 +1,27 @@
-const User = require('../models/User')
 const mongoose = require('mongoose')
+const express = require('express')
+
+const User = require('../models/User')
 
 
+exports.authSignup =  (req,res) => {
 
-exports.authSignup = async (req,res) => {
-  const {userName,email,password} = req.body
+  const data =new User(req.body)
+  console.log(data);
+  
 
-
-  const newUser =  new User({
-    userName,
-    email,
-    password
-  })
-
-  await newUser.save()
-  res.redirect ('/')
+  data.save()
+ .then(item => {
+   console.log(item);
+   
+ res.send("item saved to database");
+ })
+ .catch(err => {
+ res.status(400).send("unable to save to database");
+ });
 }
+
+
+
+
+
