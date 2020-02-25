@@ -35,8 +35,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin:process.env.PORT || 'http://localhost:3001',
-    credentials:true
+    origin: "http://localhost:3001",
+    credentials: true
   })
 )
 
@@ -47,7 +47,7 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
-      
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -67,10 +67,9 @@ app.use(
 
   }))
 
-const index = require('./routes/index');
-app.use('/', index);
-module.exports = app;
+app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'))
+module.exports = app;
 
 
 // mongodb://localhost/backend

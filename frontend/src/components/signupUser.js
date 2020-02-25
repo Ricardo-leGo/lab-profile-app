@@ -4,25 +4,25 @@ import { signup } from '../services/auth'
 
  class FormUser extends Component {
      state = {
-          name:'',
-          email:'',
-          password:''
+          name:"",
+          email:"",
+          password:""
      }
 
     cambiosenelInput= ({target})=>{
          let {name,value}= target
    this.setState({[name]:value})
-
-   console.log(this.state)
      }
 
      crearUsuario=async (e)=>{
         e.preventDefault();
-            const {name,email,password} =this.state
-         const user =await  signup(name,email,password)
 
-         console.log(user);
 
+
+         const user =await  signup(
+             this.state.name,
+             this.state.email,
+             this.state.password)
      }
 
 
@@ -31,7 +31,7 @@ import { signup } from '../services/auth'
     render() {
         return (
             <div>
-                <form onSubmit={this.crearUsuario}>
+                <form onSubmit={this.crearUsuario} method="POST">
                     <input type='text'     name='name'     id='name' onChange={this.cambiosenelInput} placeholder='Name'
                     value={this.state.name}/>
                     <input type='email'    name='email'         id='email'     onChange={this.cambiosenelInput} placeholder='Email'
