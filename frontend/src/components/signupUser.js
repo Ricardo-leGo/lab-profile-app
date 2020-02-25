@@ -16,9 +16,6 @@ import { signup } from '../services/auth'
 
      crearUsuario=async (e)=>{
         e.preventDefault();
-
-
-
          const user =await  signup(
              this.state.name,
              this.state.email,

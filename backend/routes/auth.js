@@ -8,9 +8,11 @@ router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post('/signup', authSignup, (req,res)=>{
-  res.send(200).json('hoooooooooooooooooooooli')
-})
+router.post('/signup', authSignup)
+
+
+
+
 
 
 module.exports =router

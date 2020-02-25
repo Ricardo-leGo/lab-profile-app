@@ -72,4 +72,3 @@ app.use('/auth', require('./routes/auth'))
 module.exports = app;
 
 
-// mongodb://localhost/backend
