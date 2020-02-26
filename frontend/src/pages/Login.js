@@ -1,16 +1,18 @@
 import React, {useContext} from 'react'
 import{MyContext} from '../context'
 
- function Signup({history}){
+ function Login({history}){
     const context = useContext(MyContext)
+
         const submitToContext = (e) =>{
-              context.signupSubmit( e )
+
+              context.loginSubmit( e )
              .then(response => {
                 console.log(response);
-                 history.push('/login')
+                 history.push('/profile')
                 }).catch(err => {
                         console.log(err)
-                        history.push('/signup')
+                        history.push('/login')
                   })
         }
     return (
@@ -19,32 +21,23 @@ import{MyContext} from '../context'
             {
                 return(
                     <>
-                    <h1>Crea una cuenta</h1>
+                    <h1>Hola</h1>
                     <form onSubmit={submitToContext}>
-                    <input
-                    type='text'
-                    name='name'
-                    id='name'
-                    placeholder='Name'
-                    onChange={context.signupDataInputs}
-                    />
                     <input
                     type='email'    
                     name='email'
                     id='email'      
                     placeholder='Email'
-                    onChange={context.signupDataInputs}
-
+                    onChange={context.loginDataInputs}
                     />
                     <input 
                     type='password' 
                     name='password'
                     id='password'
                     placeholder='Password'
-                    onChange={context.signupDataInputs}
-
+                    onChange={context.loginDataInputs}
                     />
-                    <input type='submit' value='signup'/>
+                    <input type='submit' value='Login'/>
                 </form>
                     </>
 
@@ -63,4 +56,4 @@ import{MyContext} from '../context'
 
 
 
-export default Signup
+export default Login
