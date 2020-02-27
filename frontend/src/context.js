@@ -3,7 +3,6 @@ import { createContext ,Component} from "react";
 import { withRouter } from 'react-router-dom'
 import {signupServ, loginserv} from './services/auth'
 import axios from 'axios'
-import Signup from './pages/Signup';
 
 export const MyContext = createContext()
 class MyProvider extends Component{

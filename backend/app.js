@@ -9,7 +9,8 @@ const logger       = require('morgan');
 const path         = require('path');
 const cors         = require('cors')
 const session      = require('express-session')
-const passport     = require('./config/passport')
+const passport     = require("./config/passport");
+const flash        = require("connect-flash");
 
 
 
@@ -39,17 +40,15 @@ app.use(
     origin: "http://localhost:3001",
     credentials: true
   }))
-  app.use(
-    session({
-      secret:"irongenerator",
-      resave:true,
-      saveUninitialized:true,
-      cookie: { maxAge: 1000 * 60 * 60 }
-  
-    }))
-    app.use(passport.initialize());
-    app.use(passport.session());
+  app.use(flash());
+  app.use(session({
+    secret: "perrin",
+    resave: false,
+    saveUninitialized: true
+  }));
+  app.use(passport.initialize());
 
+  app.use(passport.session());
 
 // Express View engine setup
 
