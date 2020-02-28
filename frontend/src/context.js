@@ -16,6 +16,7 @@ class MyProvider extends Component{
             email:'',
             password:''
         },
+        userInHouse:null,
         isLog:false
     }
 
@@ -50,9 +51,21 @@ class MyProvider extends Component{
     loginSubmit = async (e) =>{
             e.preventDefault();
             const {email,password}=this.state.loginForm
-            return  await loginserv(email,password)
+            const {data} = await loginserv(email,password)
+            .then(response=>response)
+            .catch(err=>err)
+            if(data.usher){
+                this.setState(prevState => ({
+                    ...prevState,
+                    userInHouse:data.usher,
+                    isLog:true
+                  }))
+                  this.props.history.push('/profile')
+                }
+                }
 
-    }
+
+
 // End of handle inpunts of Login
 
 
