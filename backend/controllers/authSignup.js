@@ -3,6 +3,9 @@ const express = require('express')
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const passport      = require("../config/passport");
+
+
+
 exports.authSignup =   async (req,res) => {
   const {name,email,password} = req.body
   const salt =  bcrypt.genSaltSync(Number(process.env.SALT))
@@ -18,6 +21,7 @@ exports.authSignup =   async (req,res) => {
   return res.status(200).json({msg:"Done!"})
 }
 
+
 exports.authLogin = async (req,res)=>{
   passport.authenticate('local')
   const {email, password} = req.body
@@ -30,9 +34,10 @@ exports.authLogin = async (req,res)=>{
   equalPass? res.status(200).json({msg:'All good', usher}):
              res.status(401).json({msg:"Something went wrong"})
 }
+
 exports.sendMsgSignup = (req, res)=>{
   return res.status(200).json({msg:"Working Done"})
 }
 exports.profile = (req,res) => {
-  console.log("Hola profile")
+    console.log("Hola profile")
 }

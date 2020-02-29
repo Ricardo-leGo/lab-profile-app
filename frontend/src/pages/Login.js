@@ -5,9 +5,9 @@ import{MyContext} from '../context'
 
     const context = useContext(MyContext)
 
-        const submitToContext = (e) =>{
+        const submitToContext = async  (e) =>{
 
-             const info=  context.loginSubmit( e )
+             const info = await  context.loginSubmit( e )
              .then(response => {
                  history.push('/profile')
                  return response
@@ -15,7 +15,6 @@ import{MyContext} from '../context'
                         console.log(err)
                         history.push('/login')
                   })
-            console.log(info)
 
         }
 

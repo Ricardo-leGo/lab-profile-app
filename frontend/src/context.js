@@ -2,7 +2,7 @@ import React from 'react'
 import { createContext ,Component} from "react";
 import { withRouter } from 'react-router-dom'
 import {signupServ, loginserv} from './services/auth'
-import axios from 'axios'
+// import axios from 'axios'
 
 export const MyContext = createContext()
 class MyProvider extends Component{
@@ -50,18 +50,25 @@ class MyProvider extends Component{
 
     loginSubmit = async (e) =>{
             e.preventDefault();
+            console.log(this.state.isLog);
+            
             const {email,password}=this.state.loginForm
             const {data} = await loginserv(email,password)
             .then(response=>response)
             .catch(err=>err)
+                const {usher}= data
+
             if(data.usher){
                 this.setState(prevState => ({
                     ...prevState,
-                    userInHouse:data.usher,
+                    userInHouse:usher,
                     isLog:true
-                  }))
-                  this.props.history.push('/profile')
+                  }))                  
                 }
+                // isLog?
+                 this.props.history.push('/profile')
+                //  :false
+
                 }
 
 
