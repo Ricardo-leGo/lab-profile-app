@@ -56,7 +56,7 @@ class MyProvider extends Component{
             const {data} = await loginserv(email,password)
             .then(response=>response)
             .catch(err=>err)
-                const {usher}= data
+            const {usher}= data
 
             if(data.usher){
                 this.setState(prevState => ({

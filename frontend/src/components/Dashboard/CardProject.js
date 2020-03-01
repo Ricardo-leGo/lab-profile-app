@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 export default function CardProject() {
     return (
@@ -9,9 +8,14 @@ export default function CardProject() {
                 <input type="checkBox" name="nameofproject" />
                 <li>Type of Project</li>
                 <li><p>Description Project</p></li>
-                <li><ul>
-                    
-                    </ul>
+                <li>
+                <h3>Tecnologías</h3>
+                <ul>
+                        <li>MERNStack</li>
+                        <li>Phothoshop</li>
+                        <li>CorelDraw</li>
+                        <li>Adobde XD</li>
+                </ul>
                 </li>
             </ul>
         </div>

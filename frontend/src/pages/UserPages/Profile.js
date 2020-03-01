@@ -19,9 +19,9 @@ import CalendarIO from '../../components/Dashboard/Calendar'
                         <BarProfile logeado={isLog} userContext= {userInHouse}/>
                         <UserDashboard userContext= {userInHouse} />
                         <CalendarIO/>
-                        <div>Crear CV</div>
-                        </>
 
+                        <input type="submit" value="Create CV"/>
+                        </>
 
                         )
             }

@@ -1,17 +1,11 @@
 import React from 'react'
-import { Route, Switch} from 'react-router-dom'
+import { Route, Switch, Redirect} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Profile from './pages/UserPages/Profile'
-
-// const Hommie = () => <h1>Hommie man just Do it Pana</h1>
-// const EnterMan = () => <h1>Comme in Hommie</h1>
-// const AccesHommie = () => <h1>Comm ´on  Nigga</h1>
-const fuckoffniga = () => <h1>logout Nigga</h1>
-// const Comminman = () => <h1>Hommie Ouse, nigga</h1>
-
+import {logout} from './services/auth'
 
 export default function Router(){
     return (
@@ -21,8 +15,9 @@ export default function Router(){
                 <Route path='/' component={Home} exact/>
                 <Route path='/login' component={Login} exact/>
                 <Route path='/signup' component={Signup} exact/>
-                <Route path='/logout' component={fuckoffniga} exact/>
+                <Route path='/logout' component={async ()=>{await logout().then(res=>console.log(res)).catch(err=>err)}} exact/>
                 <Route path='/Profile' component={Profile} exact/>
+                <Route path='*' component={()=>{return <h1>404 Page Not Found</h1>}}/>
             </Switch>
         </>
     )
