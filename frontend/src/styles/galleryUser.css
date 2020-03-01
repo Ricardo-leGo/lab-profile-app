@@ -1,0 +1,18 @@
+.galleryTwoParts{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.galleryContainer{
+    background-color: black;
+    margin-top: -20%;
+    margin-left: 15%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+}

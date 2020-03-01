@@ -11,7 +11,7 @@ import{MyContext} from '../context'
                 return(
                     <>
                     <h1>Home</h1>
-                    
+
                     </>
 
 

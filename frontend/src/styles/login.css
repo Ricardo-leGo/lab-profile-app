@@ -1,0 +1,25 @@
+form{
+    display: flex;
+    width: 30%;
+    height: 30vh;
+    margin: 10% 0 0 60%;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow:0 1px 1px 0 rgba(60,64,67,.08),0 1px 1px 1px rgba(60,64,67,.16)
+
+}
+input{
+    width: 60%;
+    height: 5vh;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: .5%;
+    border:1px solid rgb(0, 0, 0,.1);
+    box-shadow:0 1px 1px 0 rgba(60,64,67,.08),0 1px 1px 1px rgba(60,64,67,.16)
+}
+
+input[type="submit"]{
+    background-color: turquoise;
+    width: 30%;
+}

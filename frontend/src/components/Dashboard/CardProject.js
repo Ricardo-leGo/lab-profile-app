@@ -1,23 +1,20 @@
 import React from 'react'
+import '../../styles/cardProject.css'
 
 export default function CardProject() {
     return (
-        <div >
+        <div className="cardProject">
             <h1>Project Name</h1>
-            <ul>
-                <input type="checkBox" name="nameofproject" />
-                <li>Type of Project</li>
-                <li><p>Description Project</p></li>
-                <li>
-                <h3>Tecnologías</h3>
-                <ul>
-                        <li>MERNStack</li>
-                        <li>Phothoshop</li>
-                        <li>CorelDraw</li>
-                        <li>Adobde XD</li>
-                </ul>
-                </li>
-            </ul>
+            <input type="checkBox" name="nameofproject" />
+            <h2>Type of Project</h2>
+            <p>Description Project</p>
+            <h3>Tecnologías</h3>
+            <div className="contentTags">
+                <span>MERNStack</span>
+                <span>Phothoshop</span>
+                <span>CorelDraw</span>
+                <span>Adobde XD</span>
+            </div>
         </div>
     )
 }

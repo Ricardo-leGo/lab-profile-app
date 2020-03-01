@@ -1,0 +1,24 @@
+
+
+.cardContainer{
+     width: 15vw;
+     display: flex;
+     flex-flow: column wrap;
+     justify-content: center;
+     align-items: center;
+     color: black;
+     background-color:pink;
+
+}
+.cardContainer a{
+    background-color: red;
+    width: 100%;
+    height: auto;
+    display: block;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 3%;
+
+
+
+}
