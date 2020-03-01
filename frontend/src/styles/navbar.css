@@ -21,7 +21,7 @@ nav{
 ul{
     display: flex;
 
-    height: 7vh;
+    height: 6.5vh;
     width: 50vw;
     justify-content: flex-end;
     align-items: center;

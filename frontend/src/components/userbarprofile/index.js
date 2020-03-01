@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'
 import '../../styles/wraperLinkSocial.css'
 
 export class BarProfile extends Component {
+
+
+    state={
+        
+    }
     constructor(props){
         super(props)
  
@@ -12,6 +17,7 @@ export class BarProfile extends Component {
         return (
             <div className="cardContainer">
         <img className="imgProfile" src={this.props.userContext.img}/>
+
         <h1>{this.props.userContext.name}</h1>
             <div className="wraperLinksSocial">
                 <Link to="#">Linkedin</Link>
