@@ -10,7 +10,7 @@ class CalendarIO extends Component {
 
   render() {
     return (
-      <div>
+      <div className="calendarContainer">
         <Calendar
           onChange={this.onChange}
           value={this.state.date}

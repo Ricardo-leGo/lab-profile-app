@@ -23,6 +23,5 @@ export class BarProfile extends Component {
             </div>
         )
     }
-
 }
 export default BarProfile

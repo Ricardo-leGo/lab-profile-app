@@ -1,15 +1,14 @@
 .galleryTwoParts{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 
 }
 
 .galleryContainer{
-    background-color: black;
-    margin-top: -20%;
-    margin-left: 15%;
+    margin-top: -70%;
+    margin-left: 20%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;

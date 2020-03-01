@@ -22,9 +22,6 @@ export class UserDashboard extends Component {
                     <CardProject />
                     <CardProject />
                     <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
                 </div>
             </div>
         )
