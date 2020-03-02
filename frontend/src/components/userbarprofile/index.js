@@ -6,7 +6,7 @@ export class BarProfile extends Component {
 
 
     state={
-        
+
     }
     constructor(props){
         super(props)

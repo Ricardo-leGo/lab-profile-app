@@ -1,16 +1,18 @@
 #createCv{
     width: 17vw;
+    border-radius: 5px;
 }
 #newProject{
     background-color: turquoise;
     width: 15% ;
+    height:5vh;
     color: black;
-    box-shadow:0 1px 1px 0 rgba(60,64,67,.08),0 1px 1px 1px rgba(60,64,67,.16);
+    box-shadow:0 1px 1px 0 rgba(60,64,67,.08),0 1px 3px 1px rgba(60,64,67,.16);
     margin-left: 1.5%;
     text-align: center;
     display: flex;
     justify-content: center;
-
     align-items: center;
+    border-radius: 5px;
 
 }
