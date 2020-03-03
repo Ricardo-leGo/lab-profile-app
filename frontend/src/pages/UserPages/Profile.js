@@ -19,12 +19,6 @@ import {getProfile} from '../../services/getProfile'
     // console.log(userInHouse._id);
     // console.log(proyectsUser[0].owner)
 
-    proyectsUser.map(el=>(
-        el.owner===userInHouse._id?console.log('este usuario lo hizo'):console.log('este no lo hizo este wey')
-            
-        
-    ))
-  
 
     return (
         <MyContext.Consumer>
@@ -46,7 +40,8 @@ import {getProfile} from '../../services/getProfile'
                         <BarProfile logeado={isLog} userContext= {userInHouse}/>
                         <CalendarIO/>
                         <input id="createCv" type="submit" value="Create CV"/><br/>
-                        <UserDashboard userContext= {userInHouse} />
+             
+                        <UserDashboard userContext= {userInHouse} proysContext={proyectsUser} />
                         <NewProject userContext= {userInHouse} />
                         </>
                         )

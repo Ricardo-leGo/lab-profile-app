@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../styles/cardProject.css'
 
-export default function CardProject() {
+export default function CardProject(props) {
     return (
         <div className="cardProject">
             <h1>Project Name</h1>
