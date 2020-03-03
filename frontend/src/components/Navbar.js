@@ -23,7 +23,7 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
-                <Link to='/logout'>
+                <Link to='/'>
                     Logout
                 </Link>
               </li>

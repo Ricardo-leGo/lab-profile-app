@@ -14,7 +14,6 @@ import NewProject from './newProject'
     // useEffect(() => {
     //     if (isLog) return history.push('/login')
     //   })
-
     const {userInHouse} = context.state
     return (
         <MyContext.Consumer>
@@ -29,7 +28,7 @@ import NewProject from './newProject'
                         <CalendarIO/>
                         <input id="createCv" type="submit" value="Create CV"/><br/>
                         <UserDashboard userContext= {userInHouse} />
-                        <NewProject />
+                        <NewProject userContext= {userInHouse} />
                         </>
                         )
                 }

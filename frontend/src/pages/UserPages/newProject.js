@@ -1,47 +1,77 @@
 import React, { Component } from 'react'
 import { newprojectservice } from '../../services/newProject'
-
+import style from '../../styles/newProject.css'
 class NewProject extends Component {
-
+constructor(props){
+    super(props)
+}
 state= {
         files:[],
         title:'',
         description:'',
         web:'',
         github:'',
-        behance:''
+        behance:'',
+        file:null
 }
     uploadinputs = ({target}) =>{
       const{name,value} = target
         this.state[name]= value
-            console.log(this.state)
+        console.log(this.state);
+        
         }
 
-        newprojectsubmit =(e) =>{
+        handlefileinput =async (e)  =>{
+            
+          await   this.setState({file:e.target.files[0]})
+            console.log(this.state);
+            
+            
+        }
+        newprojectsubmit = async (e) =>{
                 e.preventDefault();
-                const {title,files,description,web,github,behance} = this.state
-                 newprojectservice(title,files,description,web,github,behance)
+                const{title,description,web,github,behance} = this.state
+                let data = {title,description,web,github,behance}
+                let newform = new FormData()
+                console.log(this.state.file);
+                
+              await newform.append('file', this.state.file)
+            //    await  newform.append('data',data)
+                console.log(data);
+                console.log(newform)
+
+                const h ={}
+                    h.Accept = 'application/json'
+                
+                 await newprojectservice(newform,data,h).then(res=>console.log(res)).catch(err=>err)
+
         }
 
     render() {
-
+        // console.log(this.props)
         return (
             <div className="sectionnewproject">
                 <h1>New Project</h1>
-                <form id="newProject" onSubmit={this.newprojectsubmit}>
-                <input type="file" name="files" id="filesInput" placeholder="Upload Files"          onChange={this.uploadinputs} />
-                <input type="text" name="title" id="titleInput" placeholder="Title"                 onChange={this.uploadinputs} />
-                <input type="text" name="description" id="descriptionInput" placeholder="description" onChange={this.uploadinputs} />
-                <input type="text" name="web" id="webInput" placeholder="Web"                       onChange={this.uploadinputs} />
-                <input type="text" name="github" id="githubInput" placeholder="github"              onChange={this.uploadinputs} />
-                <input type="text" name="behance" id="behanceInput" placeholder="behance"           onChange={this.uploadinputs} />
+                <form id="newProject"   method="post" encType="multipart/form-data" onSubmit={this.newprojectsubmit} >
+                    <div id="wiUpload">
+                        <input
+                        type="file"
+                        name="file"
+                        id="filesInput"
+                        placeholder="Upload Files"
+                        onChange={this.handlefileinput} />
+                    </div>
+                    <div id="wiText">
+                        <input type="text" name="title" id="titleInput" placeholder="Title"                 onChange={this.uploadinputs} />
+                        <input type="text" name="description" id="descriptionInput" placeholder="description" onChange={this.uploadinputs} />
+                        <input type="text" name="web" id="webInput" placeholder="Web"                       onChange={this.uploadinputs} />
+                        <input type="text" name="github" id="githubInput" placeholder="github"              onChange={this.uploadinputs} />
+                        <input type="text" name="behance" id="behanceInput" placeholder="behance"           onChange={this.uploadinputs} />
+                    </div>
                 <input type="submit" value="Create"/>
                 </form>
-
-
             </div>
         )
     }
 }
-
 export default NewProject

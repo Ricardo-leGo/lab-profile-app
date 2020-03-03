@@ -1,18 +1,14 @@
 const { Schema, model } = require('mongoose')
+const User = require('../models/User')
 
 const projectSchema = new Schema({
-
-  name:String,
-  owner:{
-    type:Schema.Types.ObjectId,
-    ref:User
-  },
-  typeofprojects:String,
-  smlldescription:String,
-  lrgdescription:String,
-  techtags:[{type:String}],
-  images:[{type:String}],
-  linkproject:String
+  owner:String,
+  title:String,
+  description:String,
+  web:String,
+  github:String,
+  behance:String,
+  files:[{String}]
 },{
   timestamps:true,
   versionKey:false
