@@ -17,7 +17,8 @@ class MyProvider extends Component{
             password:''
         },
         userInHouse:null,
-        isLog:false
+        isLog:false,
+        proyectsUser:null
     }
 
 
@@ -57,11 +58,15 @@ class MyProvider extends Component{
             .then(response=>response)
             .catch(err=>err)
             const {usher}= data
+            const {proys}=data
+            
+            
 
             if(data.usher){
                 this.setState(prevState => ({
                     ...prevState,
                     userInHouse:usher,
+                    proyectsUser:proys,
                     isLog:true
                   }))                  
                 }

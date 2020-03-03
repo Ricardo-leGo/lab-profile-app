@@ -13,5 +13,5 @@ router.get('/logout', (req,res)=>{
     req.logout()
     res.status(200).json({msg:"GoodBye"})
 })
-router.get('/profile', ensures ,profile)
+router.get('/profile' ,profile)
 module.exports =router

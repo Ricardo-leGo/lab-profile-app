@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const express = require('express')
 const User = require('../models/User')
+const Projects = require('../models/Projects')
 const bcrypt = require('bcrypt')
 const passport      = require("../config/passport");
 
@@ -27,17 +28,21 @@ exports.authLogin = async (req,res)=>{
   const {email, password} = req.body
 
   const usher = await User.findOne({ email })
+  const proys = await Projects.find()
   if(!usher){
     res.status(500).json({msg:"User or Password are invalid"})
   }
   const equalPass =  bcrypt.compareSync(password, usher.password)
-  equalPass? res.status(200).json({msg:'All good', usher}):
+  equalPass? res.status(200).json({msg:'All good', usher, proys}):
              res.status(401).json({msg:"Something went wrong"})
 }
 
 exports.sendMsgSignup = (req, res)=>{
   return res.status(200).json({msg:"Working Done"})
 }
-exports.profile = (req,res) => {
-    console.log("Hola profile")
+exports.profile =  (req,res) => {
+  //   const  proys =  Projects.find().then(res=>console.log(res)).catch(err=>err)
+  //   console.log(proys)
+
+  //  return res.status(200).json({msg:"Proys", proys})
 }

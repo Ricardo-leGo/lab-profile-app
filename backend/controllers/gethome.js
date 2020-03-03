@@ -7,6 +7,6 @@ const projects = await Projects.find()
 const user = await User.find()
 
 
-res.status(200).json({projects,user})
+return res.status(200).json({projects,user})
 
 }
