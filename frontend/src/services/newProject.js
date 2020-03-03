@@ -4,8 +4,12 @@ const baseURL     = 'http://localhost:3000'
 const AUTHSERVICE = axios.create({      baseURL,withCredentials:true    })
 
 
-export const newprojectservice = async (newform,data,h)=>{
-    return await AUTHSERVICE.post('/new-project',{newform, data,headers:h})
+export const newprojectservicephoto = async (file)=>{
+    return await AUTHSERVICE.post('/new-project',file)
+    .then(res=>console.log(res)).catch(err=>err)
+}
+export const newprojectservicedata = async (data)=>{
+    return await AUTHSERVICE.post('/new-project',data)
     .then(res=>console.log(res)).catch(err=>err)
 }
 

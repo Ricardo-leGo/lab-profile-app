@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { newprojectservice } from '../../services/newProject'
+import { newprojectservicedata, newprojectservicephoto } from '../../services/newProject'
 import style from '../../styles/newProject.css'
 class NewProject extends Component {
 constructor(props){
@@ -25,7 +25,7 @@ state= {
             
           await   this.setState({file:e.target.files[0]})
             console.log(this.state);
-            
+
             
         }
         newprojectsubmit = async (e) =>{
@@ -35,15 +35,13 @@ state= {
                 let newform = new FormData()
                 console.log(this.state.file);
                 
-              await newform.append('file', this.state.file)
-            //    await  newform.append('data',data)
+               await newform.append('file', this.state.file)
                 console.log(data);
                 console.log(newform)
 
-                const h ={}
-                    h.Accept = 'application/json'
-                
-                 await newprojectservice(newform,data,h).then(res=>console.log(res)).catch(err=>err)
+                 await newprojectservicedata(data).then(res=>console.log(res+'   meg: si se hizo 2')).catch(err=>err)
+                 await newprojectservicephoto(newform).then(res=>console.log(res+'   questapasanda')).catch(err=>err)
+                 console.log("no se");
 
         }
 

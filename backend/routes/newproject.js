@@ -5,5 +5,5 @@ const uploadCloud = require('../config/cloudinary');
 
 
 // uploadCloud.single('photo'),
-router.post('/', uploadCloud.single('newform'),newprojrct)
+router.post('/', uploadCloud.single('file'),newprojrct)
 module.exports =router
