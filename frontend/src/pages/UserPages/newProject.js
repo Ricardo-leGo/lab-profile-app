@@ -39,9 +39,8 @@ state= {
                 console.log(data);
                 console.log(newform)
 
+                await newprojectservicephoto(newform).then(res=>console.log(res+'   questapasanda')).catch(err=>err)
                  await newprojectservicedata(data).then(res=>console.log(res+'   meg: si se hizo 2')).catch(err=>err)
-                 await newprojectservicephoto(newform).then(res=>console.log(res+'   questapasanda')).catch(err=>err)
-                 console.log("no se");
 
         }
 
