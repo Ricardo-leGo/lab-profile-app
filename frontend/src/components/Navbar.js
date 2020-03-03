@@ -22,11 +22,11 @@ function Navbar() {
                       Signup
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                 <Link to='/'>
                     Logout
                 </Link>
-              </li>
+              </li> */}
                 </ul>
             </nav>
         </div>

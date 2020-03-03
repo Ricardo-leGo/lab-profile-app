@@ -7,6 +7,7 @@ constructor(props){
 }
 state= {
         files:[],
+        // user_id:this.props.userInHouse,
         title:'',
         description:'',
         web:'',
@@ -16,9 +17,8 @@ state= {
 }
     uploadinputs = ({target}) =>{
       const{name,value} = target
-        this.state[name]= value
-        console.log(this.state);
-        
+        //this.state[name]= value
+        this.setState({[name]:value})        
         }
 
         handlefileinput =async (e)  =>{
@@ -28,19 +28,25 @@ state= {
 
             
         }
-        newprojectsubmit = async (e) =>{
+        newprojectsubmit = (e) =>{
                 e.preventDefault();
-                const{title,description,web,github,behance} = this.state
-                let data = {title,description,web,github,behance}
+                // const{title,description,web,github,behance} = this.state
+                // let data = {title,description,web,github,behance}
                 let newform = new FormData()
                 console.log(this.state.file);
                 
-               await newform.append('file', this.state.file)
-                console.log(data);
-                console.log(newform)
+                newform.append('file', this.state.file)
+                newform.append('_id', this.props.userContext._id)
+                newform.append('title', this.state.title)
+               newform.append('description', this.state.description)
+               newform.append('web', this.state.web)
+               newform.append('github', this.state.github)
+               newform.append('behance', this.state.behance)
 
-                await newprojectservicephoto(newform).then(res=>console.log(res+'   questapasanda')).catch(err=>err)
-                 await newprojectservicedata(data).then(res=>console.log(res+'   meg: si se hizo 2')).catch(err=>err)
+                console.log(newform)
+                    
+                //await newprojectservicephoto(newform).then(res=>console.log(res+'   questapasanda')).catch(err=>err)
+                newprojectservicedata(newform).then(res=>console.log(res, 'msg: si se hizo ?')).catch(err=>console.log(err))
 
         }
 

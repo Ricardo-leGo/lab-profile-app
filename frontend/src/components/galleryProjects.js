@@ -1,20 +1,19 @@
 import React, {useContext} from 'react'
 import{MyContext} from '../context'
-import { getHome } from '../services/getHomeService'
 
- function Home({history}){
-
+ function Gallarey({history}){
     const context = useContext(MyContext)
-           const getHomedata=  getHome().then(res=>console.log(res)).catch(err=>err)
+
+        }
     return (
         <MyContext.Consumer>
         {context=>
-        
             {
                 return(
                     <>
-                    <h1>Home</h1>
-
+                        <H1>
+                            Hoooola
+                        </H1>
                     </>
 
 
@@ -32,4 +31,4 @@ import { getHome } from '../services/getHomeService'
 
 
 
-export default Home
+export default Gallarey

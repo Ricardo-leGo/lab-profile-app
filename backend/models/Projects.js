@@ -8,7 +8,7 @@ const projectSchema = new Schema({
   web:String,
   github:String,
   behance:String,
-  files:{type:String, default:''}
+  files:String
 },{
   timestamps:true,
   versionKey:false
