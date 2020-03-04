@@ -1,20 +1,20 @@
 import React from 'react'
 import '../../styles/cardProject.css'
 
-export default function CardProject(props) {
+export default function CardProject(
+    {picture,title,gh,bh,web,description,origindate}) {
     return (
         <div className="cardProject">
-            <h1>Project Name</h1>
-            <input type="checkBox" name="nameofproject" />
-            <h2>Type of Project</h2>
-            <p>Description Project</p>
-            <h3>Tecnologías</h3>
-            <div className="contentTags">
-                <span>MERNStack</span>
-                <span>Phothoshop</span>
-                <span>CorelDraw</span>
-                <span>Adobde XD</span>
+            <h1>{title}</h1>
+            <img src={picture} alt={title} />
+            <p>{description}</p>
+            <div className="spanContainer">
+            <span>{gh}</span>
+            <span>{bh}</span>
+            <span>{web}</span>
+            <span>{origindate}</span>
             </div>
+
         </div>
     )
 }

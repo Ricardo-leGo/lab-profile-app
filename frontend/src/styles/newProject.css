@@ -1,5 +1,8 @@
 .sectionnewproject{
     background-color:turquoise;
+    width: 18vw;
+    margin-top: -30%;
+    margin-left: .5%;
 }
 
 h1{
@@ -22,5 +25,19 @@ h1{
 #wiUpload{
     height: 60%;
     width: 40%;
+}
+
+input[type=file]{
+
+    margin:0 auto;
+
+
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+    width: 150%;
+    
 }
 

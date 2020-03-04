@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+}
+
 form{
     display: flex;
     width: 30%;

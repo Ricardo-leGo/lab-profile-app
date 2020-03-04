@@ -7,7 +7,6 @@ constructor(props){
 }
 state= {
         files:[],
-        // user_id:this.props.userInHouse,
         title:'',
         description:'',
         web:'',
@@ -17,7 +16,6 @@ state= {
 }
     uploadinputs = ({target}) =>{
       const{name,value} = target
-        //this.state[name]= value
         this.setState({[name]:value})        
         }
 
@@ -30,8 +28,7 @@ state= {
         }
         newprojectsubmit = (e) =>{
                 e.preventDefault();
-                // const{title,description,web,github,behance} = this.state
-                // let data = {title,description,web,github,behance}
+
                 let newform = new FormData()
                 console.log(this.state.file);
                 
@@ -45,13 +42,11 @@ state= {
 
                 console.log(newform)
                     
-                //await newprojectservicephoto(newform).then(res=>console.log(res+'   questapasanda')).catch(err=>err)
                 newprojectservicedata(newform).then(res=>console.log(res, 'msg: si se hizo ?')).catch(err=>console.log(err))
 
         }
 
     render() {
-        // console.log(this.props)
         return (
             <div className="sectionnewproject">
                 <h1>New Project</h1>

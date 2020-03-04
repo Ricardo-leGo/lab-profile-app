@@ -12,12 +12,9 @@ import {getProfile} from '../../services/getProfile'
     const context = useContext(MyContext)
     
     const {isLog} = context.state
-    // useEffect(() => {
-    //     if (isLog) return history.push('/login')
-    //   })
+
     const {userInHouse, proyectsUser} = context.state
-    // console.log(userInHouse._id);
-    // console.log(proyectsUser[0].owner)
+
 
 
     return (
@@ -27,20 +24,12 @@ import {getProfile} from '../../services/getProfile'
                 if(!isLog){
                     history.push('/login')
                 }else{
-    // const info= getProfile().then(res=>res).catch(err=>err)
-    // console.log(info);
-    // if(proyectsUser.owner===userInHouse._id){
-    //     console.log(proyectsUser)
-    // }
-
-    
-    
                     return(
                         <>
                         <BarProfile logeado={isLog} userContext= {userInHouse}/>
-                        <CalendarIO/>
                         <input id="createCv" type="submit" value="Create CV"/><br/>
              
+                            {/* <CalendarIO/> */}
                         <UserDashboard userContext= {userInHouse} proysContext={proyectsUser} />
                         <NewProject userContext= {userInHouse} />
                         </>

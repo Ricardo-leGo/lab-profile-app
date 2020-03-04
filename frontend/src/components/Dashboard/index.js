@@ -13,9 +13,10 @@ export class UserDashboard extends Component {
         }
     
     componentDidMount(){
+        console.log(this.props);
         
         this.setState(this.state.projects=this.props.proysContext) 
-        console.log(this.state.projects)
+        console.log(this.state.projects);
     }
     
     render() {
@@ -24,21 +25,20 @@ export class UserDashboard extends Component {
                 <div className="galleryContainer">
 
                     {
-                    this.state.projects.map(el=>(
+                this.state.projects.map((el,i)=>(
             <CardProject
-            picture={this.state.projects.files}
-            title={this.state.projects.title}
-            gh={this.state.projects.github}
-            bh={this.state.projects.behance}
-            web={this.state.projects.web}
-            description={this.state.projects.description}
-            origindate={this.state.projects.createdAt}
+            picture={el.files}
+            title={el.title}
+            gh={el.github}
+            bh={el.behance}
+            web={el.web}
+            description={el.description}
+            origindate={el.createdAt}
+            key={i}
             />
                     )
                     )}
-  
-                    
-  
+
                 </div>
             </div>
         )

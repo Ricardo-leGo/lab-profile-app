@@ -1,51 +1,37 @@
 .cardProject{
-    background-color: tomato;
-    width: 15vw;
+    width: 25vw;
     height: 40vh;
     margin:1%;
-
-}
-
-.cardProject > h1{
-    text-align: center;
-}
-
-.cardProject > ul{
-    color: white;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-around;
-    align-items: center;
-    box-sizing: border-box;
-    width: 100%;
-    background-color: red;
-}
-
-.cardProject > li{
-    background-color:red;
-    width: 100%;
-}
-
-.cardProject{
+    box-shadow:0 1px 1px 0 rgba(60,64,67,.08),0 1px 3px 1px rgba(60,64,67,.16);
     display: flex;
     flex-flow: column  wrap;
     justify-content: space-evenly;
     align-items: center;
+    padding: 1%;
+
 }
-.cardProject > h2 {
+
+.cardProject p{
     text-align: center;
+    font-size: .8rem;
 }
-.cardProject >h3 {
-    margin-top: 10%;
+
+.cardProject > h1{
     text-align: center;
+    font-size: .9rem;
 }
+
+
 .cardProject span{
     width: 100%;
     height: 3vh;
-    display: flex;
-    justify-content:center;
-    align-items: center;
     margin:1% auto;
     padding: 1%;
     box-sizing: border-box;
+    font-size: .7rem;
+}
+
+.cardProject img{
+    width: 40%;
+    height: auto;
 }
