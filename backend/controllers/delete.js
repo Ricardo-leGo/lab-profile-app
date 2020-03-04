@@ -6,6 +6,6 @@ exports.deleteELement = async (req,res,next)=>{
   const projects = await Projects.find()
   console.log(projects);
   return res.status(200).json(
-    {msg:"updatedelete"
+    {msg:"updatedelete",
     projects})
 }
