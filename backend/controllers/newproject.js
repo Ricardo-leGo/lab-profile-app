@@ -18,5 +18,5 @@ exports.newprojrct = async  (req,res)=>{
     )
       proy.save()
       .then(res=>{return res.status(200).json({msg:"holi project"}) })
-      .catch(err=>{return res.status(500).json({msg:"No se ha creado",err})})
+      .catch(err=>{return res.status(500).json(proy)})
 }

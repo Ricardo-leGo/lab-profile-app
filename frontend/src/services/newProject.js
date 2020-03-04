@@ -8,8 +8,8 @@ const AUTHSERVICE = axios.create({      baseURL,withCredentials:true    })
 //     return await AUTHSERVICE.post('/new-project',file)
 //     .then(res=>console.log(res)).catch(err=>err)
 // }
-export const newprojectservicedata = async (data )=>{
-    return await AUTHSERVICE.post('/new-project',data )
+export const newprojectservicedata =  (data )=>{
+    return  AUTHSERVICE.post('/new-project',data ).then((res) =>res).catch(err=>err)
   
 }
 

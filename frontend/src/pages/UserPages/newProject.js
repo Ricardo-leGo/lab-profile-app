@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { newprojectservicedata, newprojectservicephoto } from '../../services/newProject'
+import { newprojectservicedata} from '../../services/newProject'
 import style from '../../styles/newProject.css'
 class NewProject extends Component {
 constructor(props){
     super(props)
 }
 state= {
-        files:[],
         title:'',
         description:'',
         web:'',
@@ -18,35 +17,31 @@ state= {
       const{name,value} = target
         this.setState({[name]:value})        
         }
-
         handlefileinput =async (e)  =>{
-            
           await   this.setState({file:e.target.files[0]})
-            console.log(this.state);
-
-            
         }
-        newprojectsubmit = (e) =>{
+        newprojectsubmit = async (e) =>{
                 e.preventDefault();
 
                 let newform = new FormData()
-                console.log(this.state.file);
-                
                 newform.append('file', this.state.file)
-                newform.append('_id', this.props.userContext._id)
+                newform.append('_id', this.props.userID)
                 newform.append('title', this.state.title)
                newform.append('description', this.state.description)
                newform.append('web', this.state.web)
                newform.append('github', this.state.github)
                newform.append('behance', this.state.behance)
 
-                console.log(newform)
-                    
-                newprojectservicedata(newform).then(res=>console.log(res, 'msg: si se hizo ?')).catch(err=>console.log(err))
+                const newdata = await newprojectservicedata(newform)
+                // .then(res=>console.log(res))
+                // .catch(err=>console.log(err))
+                console.log(newdata);
 
-        }
+                console.log(this.props)
 
-    render() {
+
+            }
+            render() {
         return (
             <div className="sectionnewproject">
                 <h1>New Project</h1>

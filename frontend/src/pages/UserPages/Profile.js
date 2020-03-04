@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext} from 'react'
 import{MyContext} from '../../context'
 import BarProfile from '../../components/userbarprofile/index'
 import UserDashboard from '../../components/Dashboard'
@@ -28,10 +28,10 @@ import {getProfile} from '../../services/getProfile'
                         <>
                         <BarProfile logeado={isLog} userContext= {userInHouse}/>
                         <input id="createCv" type="submit" value="Create CV"/><br/>
-             
+
                             {/* <CalendarIO/> */}
+                            <NewProject userID= {userInHouse._id} porysState={context.state.proyectsUser}/>
                         <UserDashboard userContext= {userInHouse} proysContext={proyectsUser} />
-                        <NewProject userContext= {userInHouse} />
                         </>
                         )
                 }

@@ -6,24 +6,30 @@ import '../../styles/galleryUser.css'
 export class UserDashboard extends Component {
     constructor(props){
         super(props)
+        this.arrayProys =[]
+
+        this.props.proysContext.forEach(el=>{
+            if(el.owner===this.props.userContext._id){
+                this.arrayProys.push(el)
+            }
+    
+        })
     }
     state={
-            user:{},
-            projects:[]
-        }
-    
-    componentDidMount(){
-        console.log(this.props);
-        
-        this.setState(this.state.projects=this.props.proysContext) 
-        console.log(this.state.projects);
+        projects:[]
     }
-    
+
+    componentDidMount(){
+            this.setState(this.state.projects = this.arrayProys)
+    }
+    componentDidUpdate(){
+
+    }
+
     render() {
         return (
             <div className="galleryTwoParts">
-                <div className="galleryContainer">
-
+            <div className="galleryContainer">
                     {
                 this.state.projects.map((el,i)=>(
             <CardProject

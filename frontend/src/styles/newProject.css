@@ -1,8 +1,9 @@
 .sectionnewproject{
     background-color:turquoise;
     width: 18vw;
-    margin-top: -30%;
+    margin-top:2%;
     margin-left: .5%;
+    display: block;
 }
 
 h1{
