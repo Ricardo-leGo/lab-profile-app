@@ -41,6 +41,8 @@ export class UserDashboard extends Component {
             description={el.description}
             origindate={el.createdAt}
             key={i}
+            idproy={el._id}
+
             />
                     )
                     )}

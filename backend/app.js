@@ -74,6 +74,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'))
 app.use('/new-project', require('./routes/newproject'))
+app.use('/delete', require('./routes/deleteelement'))
 module.exports = app;
 
 
