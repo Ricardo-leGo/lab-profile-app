@@ -1,33 +1,39 @@
-import React from 'react'
-import '../../styles/cardProject.css'
+import React, {useContext} from 'react'
+import{MyContext} from '../../context'
 import {deleteproy}  from '../../services/deleteproy'
 
+import '../../styles/cardProject.css'
 
-
-export default function CardProject(
-    {picture,title,gh,bh,web,description,origindate,idproy}) {
-
-
-        const delElement = ( e ) =>{
-            console.log(e.target.id);
-
-            deleteproy(e).then(res=>res).catch((err) => err)
-        }
-        
+export default function CardProject( {history,picture,title,gh,bh,web,description,origindate,idproy}){
+    const context = useContext(MyContext)
+    const delElement =async  ( e ) =>{
+        const newprojects =  await deleteproy(e)
+        console.log(newprojects);
+       }
     return (
-        <div className="cardProject">
-            <h1>{title}</h1>
-            <img src={picture} alt={title} />
-            <p>{description}</p>
-            <div className="spanContainer">
-            <span>{gh}</span>
-            <span>{bh}</span>
-            <span>{web}</span>
-            <span>{origindate}</span>
-            <p id={idproy} onClick={delElement} className="deleteElemnet">Delete</p>
+        <MyContext.Consumer>
+        {context=>
+            {
+                return (
+                    <div className="cardProject">
+                        <h1>{title}</h1>
+                        <img src={picture} alt={title} />
+                        <p>{description}</p>
+                        <div className="spanContainer">
+                        <span>{gh}</span>
+                        <span>{bh}</span>
+                        <span>{web}</span>
+                        <span>{origindate}</span>
+                        <p id={idproy} onClick={delElement} className="deleteElemnet">Delete</p>
+                        </div>
+                    </div>
+                )
 
-            </div>
-
-        </div>
+            }
+        }
+        </MyContext.Consumer>
     )
 }
+
+
+

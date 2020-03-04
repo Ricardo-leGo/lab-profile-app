@@ -3,7 +3,7 @@ import { createContext ,Component} from "react";
 import { withRouter } from 'react-router-dom'
 import {signupServ, loginserv} from './services/auth'
 import {getHome} from './services/getHomeService'
-// import axios from 'axios'
+import {deleteproy}  from './services/deleteproy'
 
 export const MyContext = createContext()
 class MyProvider extends Component{
@@ -70,21 +70,16 @@ class MyProvider extends Component{
     }
 
 
-                async componentDidMount(){
-                    const {data:{projects}} = await getHome()
 
-                    this.setState({homedata:projects})
-
-                }
-
-                
                 render(){
                     const {
                         state,
                         signupDataInputs, 
                         signupSubmit, 
                         loginDataInputs,
-                        loginSubmit
+                        loginSubmit,
+                        deleteproy
+                        
 
                     }= this
                         return(
