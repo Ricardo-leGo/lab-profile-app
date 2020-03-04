@@ -7,11 +7,10 @@
 .navContainer{
     margin: 0;
     padding: 0;
-    background-color: orange;
 
 }
 nav{
-    background-color: pink;
+    background-color: #f0f0a8;
     margin: 0;
     padding: 0;
     display: flex;
@@ -36,7 +35,7 @@ li{
     align-items: center;
 }
 a{
-    color:white;
+    color:#903030;
     text-decoration: none;
     font-size: 2rem;
     height: 100%;
@@ -45,9 +44,9 @@ a{
     justify-content: center;
     align-items: center;
     transition: all .4s;
+    border-radius: 10px;
 
 }
 a:hover{
-    background-color:red;
-
+    background-color: #301830;
 }

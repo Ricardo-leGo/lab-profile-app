@@ -7,7 +7,7 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    box-shadow:0 1px 1px 0 rgba(60,64,67,.08),0 1px 3px 1px rgba(60,64,67,.16);
+    box-shadow:0 1px 1px 0 rgba(48, 24, 48,.08),0 1px 7px 1px rgba(48, 24, 48,.16);
 
 }
 
@@ -28,6 +28,8 @@
     margin: 0 auto;
     height: 70vh;
     width: auto;
+    box-shadow:0 1px 1px 0 rgba(48, 24, 48,.08),0 1px 7px 1px rgba(48, 24, 48,.16);
+
 }
 
 
@@ -69,11 +71,17 @@
     color:black;
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-left:10% ;
 }
 
+
+.linkhome:hover{
+    background-color:#301830;
+    color:#f0f0a8;
+
+}
 
 
 
