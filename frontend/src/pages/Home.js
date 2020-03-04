@@ -1,29 +1,23 @@
 import React, {useContext} from 'react'
 import{MyContext} from '../context'
-import Cardproject from '../components/Dashboard/CardProject'
+import HomeCard from '../components/HomeCards'
 
  function Home({history}){
 
     const context = useContext(MyContext)
-
-
-
-
-    return (
+        return (
         <MyContext.Consumer>
         {context=>
-
             {
                 if(context.state.homedata===null){
                   return (<>'Loading....'</>) 
                 }else{
-        
                     return(
                         <>
                             {
                                     context.state.homedata.map((el,i)=>
                                         (
-                                            <Cardproject
+                                            <HomeCard
                                             picture={el.files}
                                             title={el.title}
                                             gh={el.github}

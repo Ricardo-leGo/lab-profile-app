@@ -19,13 +19,16 @@ export class BarProfile extends Component {
         <img className="imgProfile" src={this.props.userContext.img}/>
 
         <h1>{this.props.userContext.name}</h1>
-            <div className="wraperLinksSocial">
-                <Link to="#">Linkedin</Link>
-                <Link to="#">Behance</Link>
-                <Link to="#">Github</Link>
-                <Link to="#">Youtube</Link>
-                <Link to="#">Dribbble</Link>
-            </div>
+     {
+
+         /*       <div className="wraperLinksSocial">
+                    <Link to="#">Linkedin</Link>
+                    <Link to="#">Behance</Link>
+                    <Link to="#">Github</Link>
+                    <Link to="#">Youtube</Link>
+                    <Link to="#">Dribbble</Link>
+                </div> */
+     }
             </div>
         )
     }

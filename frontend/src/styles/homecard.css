@@ -1,0 +1,79 @@
+.wrapercardHome{
+    width: 90vw;
+    height: 70vh;
+    margin: 5% auto;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow:0 1px 1px 0 rgba(60,64,67,.08),0 1px 3px 1px rgba(60,64,67,.16);
+
+}
+
+.cardHome{
+    display: flex;
+}
+
+
+.imagesection{
+    width: 50%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.imagesection img{
+    display: block;
+    margin: 0 auto;
+    height: 70vh;
+    width: auto;
+}
+
+
+
+.infowrap{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+.infowrap h1{
+    text-align: center;
+}
+.infowrap p{
+    width: 90%;
+
+}
+
+.infowrap .spanContainer{
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.spanContainer span{
+    padding: 1%;
+    margin: 2%;
+}
+.linkhome{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    background-color: #fff;
+    color:black;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left:10% ;
+}
+
+
+
+
