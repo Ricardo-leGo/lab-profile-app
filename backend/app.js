@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.ORIGIN || "http://localhost:3001" ,
+    origin: process.env.ORIGIN,
     credentials: true
   }))
   app.use(flash());
