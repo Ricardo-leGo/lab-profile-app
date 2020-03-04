@@ -73,12 +73,7 @@ class MyProvider extends Component{
         // End of handle inpunts of Login
         this.props.history.push('/profile')
     }
-    async componentDidMount(){
-        const {data:{projects}}= await getHome()
-            console.log(projects)
 
-        this.setState({homedata:projects})
-    }
 
 
 
