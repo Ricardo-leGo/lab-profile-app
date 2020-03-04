@@ -5,4 +5,5 @@ exports.deleteELement = async (req,res,next)=>{
   const proy = await Projects.findByIdAndDelete({ _id : id })
   const projects = await Projects.find()
   console.log(projects);
-  return res.status(200).json({projects})}
+  return res.status(200).json({projects})
+}
