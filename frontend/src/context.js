@@ -39,9 +39,14 @@ class MyProvider extends Component{
     }
     // End of handle inpunts of Signup
 
-    
+
     // handle inpunts of Login
-    
+    async componentDidMount(){
+        const {data:{projects}} = await getHome()
+
+        this.setState({homedata:projects})
+
+    }
     loginDataInputs = e => {
         const {loginForm} = this.state
         const {name,value} = e.target
