@@ -15,10 +15,10 @@ export default function HomeCard(
                         <h1>{title}</h1>
                         <p>{description}</p>
                             <div className="spanContainer">
-                            <span>{gh}</span>
-                            <span>{bh}</span>
-                            <span>{web}</span>
-                            <span>{origindate}</span>
+                                <span>{gh}</span>
+                                <span>{bh}</span>
+                                <span>{web}</span>
+                                <span>{origindate}</span>
                             </div>
                             <Link className="linkhome" >a</Link>
                     </div>

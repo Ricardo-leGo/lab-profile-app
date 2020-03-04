@@ -3,6 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #f4f5f0;
+}
+
+h1{
+    font-family:Tajawal ;
+}
+a{
+    font-family: Rubik;
+}
+p, span{
+    font-family:Dosis ;
+}
 
 .navContainer{
     margin: 0;

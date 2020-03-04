@@ -1,4 +1,5 @@
 .wrapercardHome{
+    background-color: transparent;
     width: 90vw;
     height: 70vh;
     margin: 5% auto;
@@ -67,7 +68,7 @@
     width: 5vh;
     height: 5vh;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #f4f5f0;
     color:black;
     display: flex;
     flex-flow: column wrap;
