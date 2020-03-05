@@ -45,9 +45,12 @@
 }
 .infowrap h1{
     text-align: center;
+    font-size: 3rem;
 }
 .infowrap p{
     width: 90%;
+    text-align: c;
+
 
 }
 
@@ -73,7 +76,7 @@
     color:black;
     display: flex;
     flex-flow: column wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin-left:10% ;
 }

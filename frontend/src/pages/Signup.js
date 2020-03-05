@@ -19,7 +19,7 @@ import{MyContext} from '../context'
             {
                 return(
                     <>
-                    <h1>Crea una cuenta</h1>
+                    <h1 className="newuserh1">Crea una cuenta</h1>
                     <form onSubmit={submitToContext}>
                     <input
                     type='text'

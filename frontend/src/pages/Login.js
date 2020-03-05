@@ -25,7 +25,7 @@ import style from '../styles/login.css'
             {
                 return(
                     <>
-                    <h1>Hola</h1>
+                    <h1 className="ingresa">Ingresa</h1>
                     <form onSubmit={submitToContext}>
                     <input
                     type='email'    

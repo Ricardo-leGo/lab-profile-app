@@ -16,8 +16,6 @@ import styles from '../styles/home.css'
                     return(
                         <><div className="homeContainer">
                             <div className="slidercontainer">
-
-
                             {
                                     context.state.homedata.map((el,i)=>
                                         (
@@ -33,15 +31,11 @@ import styles from '../styles/home.css'
                                             key={i}
                                             />
                                         )
-
-
                                         )
                             }
                                 </div>
                             </div>
                         </>
-    
-
                     )
                 }
 
