@@ -44,12 +44,7 @@ import style from '../styles/login.css'
                     <input type='submit' value='Login'/>
                 </form>
                     </>
-
-
                     )
-
-
-
         }
         }
 

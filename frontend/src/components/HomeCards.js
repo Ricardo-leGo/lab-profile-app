@@ -1,11 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {getoneproy,postoneproy } from '../services/getHomeService'
+
 import style from '../styles/homecard.css'
 
 export default function HomeCard(
-    {picture,title,gh,bh,web,description,origindate}) {
-    return (
-        <>
+    {picture,title,gh,bh,web,description,origindate,idproyect}) {
+
+                const  redirect=({target})=>{
+                   const result=  postoneproy(target.id)
+                   .then((res) => {console.log(res)})
+                   .catch((err) => {console.log(err);
+                   })
+
+                }
+
+        return (
+            <>
             <div className="wrapercardHome">
                 <div className="cardHome">
                     <div className="imagesection">
@@ -20,7 +31,7 @@ export default function HomeCard(
                                 <span>{web}</span>
                                 <span>{origindate}</span>
                             </div>
-                            <Link className="linkhome" >a</Link>
+                            <Link className="linkhome" id={idproyect} onClick={redirect} to={`/${idproyect}`} >-></Link>
                     </div>
                 </div>
             </div>

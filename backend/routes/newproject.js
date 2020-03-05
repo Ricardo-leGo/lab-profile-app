@@ -1,6 +1,6 @@
 const router       = require('express').Router()
-const {newprojrct} = require('../controllers/newproject')
 const uploadCloud = require('../config/cloudinary');
+const {newprojrct} = require('../controllers/newproject')
 
 
 

@@ -4,6 +4,7 @@ import style from '../../styles/newProject.css'
 class NewProject extends Component {
 constructor(props){
     super(props)
+    console.log("holi")
 }
 state= {
         title:'',
@@ -12,34 +13,28 @@ state= {
         github:'',
         behance:'',
         file:null
-}
+    }
     uploadinputs = ({target}) =>{
-      const{name,value} = target
-        this.setState({[name]:value})        
+        const{name,value} = target
+        this.setState({[name]:value})
         }
         handlefileinput =async (e)  =>{
           await   this.setState({file:e.target.files[0]})
         }
-        newprojectsubmit = async (e) =>{
+        newprojectsubmit =  (e) =>{
                 e.preventDefault();
-
-                let newform = new FormData()
-                newform.append('file', this.state.file)
-                newform.append('_id', this.props.userID)
-                newform.append('title', this.state.title)
+               let newform = new FormData()
+               newform.append('file', this.state.file)
+               newform.append('_id', this.props.userID)
+               newform.append('title', this.state.title)
                newform.append('description', this.state.description)
                newform.append('web', this.state.web)
                newform.append('github', this.state.github)
                newform.append('behance', this.state.behance)
 
-                const newdata = await newprojectservicedata(newform)
-                // .then(res=>console.log(res))
-                // .catch(err=>console.log(err))
-                console.log(newdata);
-
-                console.log(this.props)
-
-
+                newprojectservicedata(newform)
+                .then(res=>{console.log(res.data.proys) })
+                .catch(err=>console.log(err))
             }
             render() {
         return (

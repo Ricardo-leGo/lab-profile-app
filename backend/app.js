@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.ORIGIN,
+    origin:'http://localhost:3001',
     credentials: true
   }))
   app.use(flash());
@@ -74,6 +74,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'))
 app.use('/new-project', require('./routes/newproject'))
+app.use('/proyid', require('./routes/proyid'))
 app.use('/delete', require('./routes/deleteelement'))
 module.exports = app;
 

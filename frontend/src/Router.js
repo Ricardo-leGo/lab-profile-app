@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Profile from './pages/UserPages/Profile'
 import newProject from './pages/UserPages/newProject'
 import {logout} from './services/auth'
+import projectDetail from './pages/projectDetail'
 
 export default function Router(){
     return (
@@ -19,6 +20,7 @@ export default function Router(){
                 <Route path='/logout' component={async ()=>{await logout().then(res=>console.log(res)).catch(err=>err)}} exact/>
                 <Route path='/Profile' component={Profile} exact/>
                 <Route path='/new-project' component={newProject} exact/>
+                <Route path='/:id' component={projectDetail} exact/>
                 <Route path='*' component={()=>{return <h1>404 Page Not Found</h1>}}/>
             </Switch>
         </>

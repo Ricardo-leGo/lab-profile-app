@@ -23,7 +23,8 @@ class MyProvider extends Component{
         homedata:null
     }
 
-    // handle inpunts of Signup
+
+
     signupDataInputs = e => {
         const {SignupForm} = this.state
         const {name,value} = e.target
@@ -37,15 +38,10 @@ class MyProvider extends Component{
         const {name,email,password}=this.state.SignupForm
         return await signupServ(name,email,password)
     }
-    // End of handle inpunts of Signup
 
-
-    // handle inpunts of Login
     async componentDidMount(){
         const {data:{projects}} = await getHome()
-
         this.setState({homedata:projects})
-
     }
     loginDataInputs = e => {
         const {loginForm} = this.state
@@ -54,7 +50,6 @@ class MyProvider extends Component{
         loginForm[name]=value
         this.setState({loginForm})
     }
-
     loginSubmit = async (e) =>{
         e.preventDefault();
         const {email,password}=this.state.loginForm
@@ -73,10 +68,6 @@ class MyProvider extends Component{
         // End of handle inpunts of Login
         this.props.history.push('/profile')
     }
-
-
-
-
                 render(){
                     const {
                         state,
@@ -84,7 +75,7 @@ class MyProvider extends Component{
                         signupSubmit, 
                         loginDataInputs,
                         loginSubmit,
-                        deleteproy
+                        deletELementCard
                         
 
                     }= this
@@ -95,7 +86,8 @@ class MyProvider extends Component{
                                 signupDataInputs,
                                 signupSubmit,
                                 loginDataInputs,
-                                loginSubmit
+                                loginSubmit,
+                                deletELementCard
 
             }}>
             {this.props.children}

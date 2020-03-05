@@ -1,19 +1,14 @@
 import React, {useContext} from 'react'
-import{MyContext} from '../../context'
-import {deleteproy}  from '../../services/deleteproy'
-
+// import{MyContext} from '../../context'
+// import {deleteproy}  from '../../services/deleteproy'
 import '../../styles/cardProject.css'
 
-export default function CardProject( {history,picture,title,gh,bh,web,description,origindate,idproy}){
-    const context = useContext(MyContext)
+
+
+export default function CardProject( {history,picture,title,gh,bh,web,description,origindate,idproy,funcion}){
     const delElement =async  ( e ) =>{
-        const newprojects =  await deleteproy(e)
-        console.log(newprojects);
+       await  funcion(e)
        }
-    return (
-        <MyContext.Consumer>
-        {context=>
-            {
                 return (
                     <div className="cardProject">
                         <h1>{title}</h1>
@@ -29,11 +24,4 @@ export default function CardProject( {history,picture,title,gh,bh,web,descriptio
                     </div>
                 )
 
-            }
-        }
-        </MyContext.Consumer>
-    )
 }
-
-
-

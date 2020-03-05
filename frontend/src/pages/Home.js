@@ -23,6 +23,7 @@ import HomeCard from '../components/HomeCards'
                                             gh={el.github}
                                             bh={el.behance}
                                             web={el.web}
+                                            idproyect={el._id}
                                             description={el.description}
                                             origindate={el.createdAt}
                                             key={i}
