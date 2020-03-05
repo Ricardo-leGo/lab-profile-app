@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import{MyContext} from '../context'
 import HomeCard from '../components/HomeCards'
+import styles from '../styles/home.css'
 
  function Home({history}){
 
@@ -13,7 +14,10 @@ import HomeCard from '../components/HomeCards'
                   return (<>'Loading....'</>) 
                 }else{
                     return(
-                        <>
+                        <><div className="homeContainer">
+                            <div className="slidercontainer">
+
+
                             {
                                     context.state.homedata.map((el,i)=>
                                         (
@@ -33,6 +37,8 @@ import HomeCard from '../components/HomeCards'
 
                                         )
                             }
+                                </div>
+                            </div>
                         </>
     
 

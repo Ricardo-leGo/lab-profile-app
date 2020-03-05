@@ -6,13 +6,9 @@ import style from '../styles/homecard.css'
 
 export default function HomeCard(
     {picture,title,gh,bh,web,description,origindate,idproyect}) {
-
-                const  redirect=({target})=>{
-                   const result=  postoneproy(target.id)
-                   .then((res) => {console.log(res)})
-                   .catch((err) => {console.log(err);
-                   })
-
+            let result = {}
+                const  redirect = async ({target})=>{
+                   result= await postoneproy(target.id)
                 }
 
         return (
